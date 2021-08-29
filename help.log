@@ -1,7 +1,7 @@
-2021-06-24 21:40:06,098 Rule information log is  : /n petalWidth IS L_3(5) AND : Iris-virginica CF: 0.6
- /n how many instance number covered by the rule :27   /n how many instance number only antecedent covered by the rule :32  petalLength IS L_2(5) AND : Iris-versicolor CF: 0.8222
- /n how many instance number covered by the rule :37   /n how many instance number only antecedent covered by the rule :38  petalWidth IS L_0(5) AND : Iris-setosa CF: 0.8222
- /n how many instance number covered by the rule :37   /n how many instance number only antecedent covered by the rule :37  petalLength IS L_0(5) AND : Iris-setosa CF: 0.9556
- /n how many instance number covered by the rule :43   /n how many instance number only antecedent covered by the rule :43  petalWidth IS L_4(5) AND : Iris-virginica CF: 0.3778
- /n how many instance number covered by the rule :17   /n how many instance number only antecedent covered by the rule :17  petalLength IS L_4(5) AND : Iris-virginica CF: 0.1111
- /n how many instance number covered by the rule :5   /n how many instance number only antecedent covered by the rule :5  
+2021-08-29 18:51:13,257 Rule information log is  : /n 10.57130019782533 IS L_3(5) AND : green CF: 0.2407
+ /n how many instance number covered by the rule :65   /n how many instance number only antecedent covered by the rule :76  10.57130019782533 IS L_2(5) AND : green CF: 0.2444
+ /n how many instance number covered by the rule :66   /n how many instance number only antecedent covered by the rule :71  14.822555594677107 IS L_3(5) AND : green CF: 0.3074
+ /n how many instance number covered by the rule :83   /n how many instance number only antecedent covered by the rule :83  14.822555594677107 IS L_0(5) AND : green CF: 0.1333
+ /n how many instance number covered by the rule :36   /n how many instance number only antecedent covered by the rule :36  10.57130019782533 IS L_4(5) AND : green CF: 0.1037
+ /n how many instance number covered by the rule :28   /n how many instance number only antecedent covered by the rule :28  10.57130019782533 IS L_0(5) AND : green CF: 0.163
+ /n how many instance number covered by the rule :44   /n how many instance number only antecedent covered by the rule :44  

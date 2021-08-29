@@ -107,8 +107,20 @@ class FarcHDClassifier():
     normal_rule_degree = None
     max_granularity_degree = None
     logger = None
+    big_disjunct_class = None
+    small_disjunct_class= None
+    big_disjunct_class_accuracy = 0
+    small_disjunct_class_accuracy = 0
+    big_disjunct_instance_number = 0
+    small_disjunct_instance_number= 0
+    big_disjunct_predict_correct_number= 0
+    small_disjunct_predict_correct_number= 0
+    imbalance_rate = 0
+    small_disjunct_imbalance_rate_accuracy = 0
+    big_disjunct_imbalance_rate_accuracy =0
+    whole_imbalance_rate_accuracy = 0
 
-    def __init__(self, prepare_parameter):
+    def __init__(self, prepare_parameter,big_disjunct_class='green',small_disjunct_class='red'):
         print("__init__ of Fuzzy_Chi begin...")
         self.logger = Logger.set_logger()
         self.start_time = datetime.datetime.now()
@@ -116,6 +128,8 @@ class FarcHDClassifier():
         self.train_mydataset = MyDataSet()
         self.val_mydataset = MyDataSet()
         self.test_mydataset = MyDataSet()
+        self.big_disjunct_class = big_disjunct_class
+        self.small_disjunct_class = small_disjunct_class
 
         try:
 
@@ -359,12 +373,29 @@ class FarcHDClassifier():
 
     def do_output(self, mydataset, filename):
 
+        self.big_disjunct_class_accuracy = 0
+        self.small_disjunct_class_accuracy = 0
+        self.big_disjunct_instance_number = 0
+        self.small_disjunct_instance_number= 0
+        self.big_disjunct_predict_correct_number= 0
+        self.small_disjunct_predict_correct_number= 0
+
         output = mydataset.copy_header()  # we insert the header in the output file
         # We write the output for each example
         for i in range(0, mydataset.get_ndata()):
             # for classification:
-            output = output + mydataset.get_output_as_string_with_pos(i) + " " + self.classification_output_string(
-                mydataset.get_example(i)) + "\n"
+            original_class = mydataset.get_output_as_string_with_pos(i)
+            predict_class = self.classification_output_string(mydataset.get_example(i))
+
+            output = output + original_class + " " + predict_class+ "\n"
+            if original_class == self.big_disjunct_class:
+                self.big_disjunct_instance_number = self.big_disjunct_instance_number + 1
+                if predict_class == original_class:
+                    self.big_disjunct_predict_correct_number = self.big_disjunct_predict_correct_number + 1
+            elif original_class == self.small_disjunct_class:
+                self.small_disjunct_instance_number = self.small_disjunct_instance_number + 1
+                if predict_class == original_class:
+                    self.small_disjunct_predict_correct_number = self.small_disjunct_predict_correct_number + 1
 
         if os.path.isfile(filename):
             # print("File exist")
@@ -373,6 +404,17 @@ class FarcHDClassifier():
             # print("File not exist")
             output_file = open(filename, "w+")
 
+        self.big_disjunct_class_accuracy = self.big_disjunct_predict_correct_number/self.big_disjunct_instance_number
+        self.small_disjunct_class_accuracy = self.small_disjunct_predict_correct_number/self.small_disjunct_instance_number
+        self.imbalance_rate = self.big_disjunct_instance_number/self.small_disjunct_instance_number
+        percentage_ir = self.big_disjunct_instance_number/(self.big_disjunct_instance_number+self.small_disjunct_instance_number)
+
+        self.small_disjunct_imbalance_rate_accuracy = self.small_disjunct_class_accuracy*percentage_ir
+        self.big_disjunct_imbalance_rate_accuracy = self.big_disjunct_class_accuracy * (1-percentage_ir)
+        self.whole_imbalance_rate_accuracy = self.small_disjunct_imbalance_rate_accuracy + self.big_disjunct_imbalance_rate_accuracy
+        output = output + "The big disjunct accuracy is :" + str(self.big_disjunct_class_accuracy)+ "\n"
+        output = output + "The small disjunct accuracy is :" + str(self.small_disjunct_class_accuracy)+ "\n"
+        output = output + "The whole_imbalance_rate_accuracy accuracy is :" + str(self.whole_imbalance_rate_accuracy)+ "\n"
         output_file.write(output)
 
     # * It returns the algorithm classification output given an input example

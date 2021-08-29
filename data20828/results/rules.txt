@@ -1,0 +1,36 @@
+10 8 6
+ 
+
+ with normal rules ,the train's accuracy_score is :0.9090909090909091rule index number :0 ,  and the error rate :8.728511541691455rule index number :1 ,  and the error rate :4.177764593783325rule index number :2 ,  and the error rate :2.2254118737963857rule index number :3 ,  and the error rate :0.7651808431843315rule index number :4 ,  and the error rate :0.1031311475445016rule index number :5 ,  and the error rate :11.0
+
+with normal rules ,the test's accuracy_score is :0.8823529411764706rule index number :0 ,  and the error rate :1.8718146619663985rule index number :1 ,  and the error rate :0.5322561263627101rule index number :2 ,  and the error rate :0.2717594181455398rule index number :3 ,  and the error rate :0.28128538102915035rule index number :4 ,  and the error rate :0.04288441249620131rule index number :5 ,  and the error rate :1.010 8 6
+ 
+
+ with normal rules ,the train's accuracy_score is :0.9090909090909091rule index number :0 ,  and the error rate :8.728511541691455rule index number :1 ,  and the error rate :4.177764593783325rule index number :2 ,  and the error rate :2.2254118737963857rule index number :3 ,  and the error rate :0.7651808431843315rule index number :4 ,  and the error rate :0.1031311475445016rule index number :5 ,  and the error rate :11.0
+
+with normal rules ,the test's accuracy_score is :0.8823529411764706rule index number :0 ,  and the error rate :1.8718146619663985rule index number :1 ,  and the error rate :0.5322561263627101rule index number :2 ,  and the error rate :0.2717594181455398rule index number :3 ,  and the error rate :0.28128538102915035rule index number :4 ,  and the error rate :0.04288441249620131rule index number :5 ,  and the error rate :1.010 8 6
+ 
+
+ with normal rules ,the train's accuracy_score is :0.9090909090909091rule index number :0 ,  and the error rate :8.728511541691455rule index number :1 ,  and the error rate :4.177764593783325rule index number :2 ,  and the error rate :2.2254118737963857rule index number :3 ,  and the error rate :0.7651808431843315rule index number :4 ,  and the error rate :0.1031311475445016rule index number :5 ,  and the error rate :11.0
+
+with normal rules ,the test's accuracy_score is :0.8823529411764706rule index number :0 ,  and the error rate :1.8718146619663985rule index number :1 ,  and the error rate :0.5322561263627101rule index number :2 ,  and the error rate :0.2717594181455398rule index number :3 ,  and the error rate :0.28128538102915035rule index number :4 ,  and the error rate :0.04288441249620131rule index number :5 ,  and the error rate :1.010 8 6
+ 
+
+ with normal rules ,the train's accuracy_score is :0.9090909090909091rule index number :0 ,  and the error rate :8.728511541691455rule index number :1 ,  and the error rate :4.177764593783325rule index number :2 ,  and the error rate :2.2254118737963857rule index number :3 ,  and the error rate :0.7651808431843315rule index number :4 ,  and the error rate :0.1031311475445016rule index number :5 ,  and the error rate :11.0
+
+with normal rules ,the test's accuracy_score is :0.8823529411764706rule index number :0 ,  and the error rate :1.8718146619663985rule index number :1 ,  and the error rate :0.5322561263627101rule index number :2 ,  and the error rate :0.2717594181455398rule index number :3 ,  and the error rate :0.28128538102915035rule index number :4 ,  and the error rate :0.04288441249620131rule index number :5 ,  and the error rate :1.010 8 6
+ 
+
+ with normal rules ,the train's accuracy_score is :0.9090909090909091rule index number :0 ,  and the error rate :8.728511541691455rule index number :1 ,  and the error rate :4.177764593783325rule index number :2 ,  and the error rate :2.2254118737963857rule index number :3 ,  and the error rate :0.7651808431843315rule index number :4 ,  and the error rate :0.1031311475445016rule index number :5 ,  and the error rate :11.0
+
+with normal rules ,the test's accuracy_score is :0.8823529411764706rule index number :0 ,  and the error rate :1.8718146619663985rule index number :1 ,  and the error rate :0.5322561263627101rule index number :2 ,  and the error rate :0.2717594181455398rule index number :3 ,  and the error rate :0.28128538102915035rule index number :4 ,  and the error rate :0.04288441249620131rule index number :5 ,  and the error rate :1.010 8 6
+ 
+
+ with normal rules ,the train's accuracy_score is :0.9090909090909091rule index number :0 ,  and the error rate :8.728511541691455rule index number :1 ,  and the error rate :4.177764593783325rule index number :2 ,  and the error rate :2.2254118737963857rule index number :3 ,  and the error rate :0.7651808431843315rule index number :4 ,  and the error rate :0.1031311475445016rule index number :5 ,  and the error rate :11.0
+
+with normal rules ,the test's accuracy_score is :0.8823529411764706rule index number :0 ,  and the error rate :1.8718146619663985rule index number :1 ,  and the error rate :0.5322561263627101rule index number :2 ,  and the error rate :0.2717594181455398rule index number :3 ,  and the error rate :0.28128538102915035rule index number :4 ,  and the error rate :0.04288441249620131rule index number :5 ,  and the error rate :1.010 8 6
+ 
+
+ with normal rules ,the train's accuracy_score is :0.9090909090909091rule index number :0 ,  and the error rate :8.728511541691455rule index number :1 ,  and the error rate :4.177764593783325rule index number :2 ,  and the error rate :2.2254118737963857rule index number :3 ,  and the error rate :0.7651808431843315rule index number :4 ,  and the error rate :0.1031311475445016rule index number :5 ,  and the error rate :11.0
+
+with normal rules ,the test's accuracy_score is :0.8823529411764706rule index number :0 ,  and the error rate :1.8718146619663985rule index number :1 ,  and the error rate :0.5322561263627101rule index number :2 ,  and the error rate :0.2717594181455398rule index number :3 ,  and the error rate :0.28128538102915035rule index number :4 ,  and the error rate :0.04288441249620131rule index number :5 ,  and the error rate :1.0
