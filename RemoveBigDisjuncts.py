@@ -1,12 +1,12 @@
 class RemoveBigDisjuncts:
     rule_set = None
-    data_row_new_array = None
+    data_row_new_array = []
     data_row_array_pass = None
-    data_row_correct_clas_array = None
-    data_row_wrong_clas_array = None
+    data_row_correct_clas_array = []
+    data_row_wrong_clas_array = []
 
-    data_row_small_disjunct_array = None
-    data_row_big_disjunct_array = None
+    data_row_small_disjunct_array = []
+    data_row_big_disjunct_array = []
 
     small_disjunct_class = None
 

@@ -2,9 +2,13 @@ from DataRow import DataRow
 
 
 class Convert:
+    n_variables = 2
+    data_base = None
+    data_row_array= None
 
-    def __init__(self):
-        pass
+    def __init__(self , data_base_pass):
+        self.data_base = data_base_pass
+        self.data_row_array = []
 
     def convert_to_data_row_array(self, train):
         for i in range(0, train.size()):

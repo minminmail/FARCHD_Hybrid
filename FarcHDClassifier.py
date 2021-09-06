@@ -706,11 +706,12 @@ class FarcHDClassifier():
         file = open(self.file_rules, "a+")
         file.write(error_rate_string)
 
-    def remove_disjunct(self, train_data_set):
+    def remove_disjunct(self):
         feature_number = 2
         small_disjunct_class = 'red'
         big_disjunct_class = 'green'
-        convert = Convert()
-        data_row_array_pass = convert.convert_to_data_row_array(train_data_set)
+        convert = Convert(self.data_base)
+        data_row_array_pass = convert.convert_to_data_row_array(self.train_mydataset)
         removeBigDisjuncts = RemoveBigDisjuncts(self.rule_base.rule_base_array, data_row_array_pass, feature_number,
                                                 small_disjunct_class, big_disjunct_class)
+        return removeBigDisjuncts.remove_big_disjunct()

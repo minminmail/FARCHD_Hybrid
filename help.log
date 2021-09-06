@@ -1,4 +1,4 @@
-2021-08-30 07:40:48,887 Rule information log is  : /n 5.3 IS L_1(5) AND : green CF: 0.0319
+2021-09-07 00:25:50,575 Rule information log is  : /n 5.3 IS L_1(5) AND : green CF: 0.0319
  /n how many instance number covered by the rule :3   /n how many instance number only antecedent covered by the rule :9  5.5 IS L_1(5) AND : green CF: 0.1915
  /n how many instance number covered by the rule :18   /n how many instance number only antecedent covered by the rule :25  5.5 IS L_4(5) AND : green CF: 0.2553
  /n how many instance number covered by the rule :24   /n how many instance number only antecedent covered by the rule :26  5.3 IS L_3(5) AND : green CF: 0.4787
