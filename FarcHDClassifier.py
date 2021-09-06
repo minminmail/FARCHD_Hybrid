@@ -20,6 +20,8 @@ from RuleBase import RuleBase
 import numpy as np
 from Logger import Logger
 from sklearn.metrics import accuracy_score
+from RemoveBigDisjuncts import RemoveBigDisjuncts
+from Convert import Convert
 
 
 class FarcHDClassifier():
@@ -108,19 +110,19 @@ class FarcHDClassifier():
     max_granularity_degree = None
     logger = None
     big_disjunct_class = None
-    small_disjunct_class= None
+    small_disjunct_class = None
     big_disjunct_class_accuracy = 0
     small_disjunct_class_accuracy = 0
     big_disjunct_instance_number = 0
-    small_disjunct_instance_number= 0
-    big_disjunct_predict_correct_number= 0
-    small_disjunct_predict_correct_number= 0
+    small_disjunct_instance_number = 0
+    big_disjunct_predict_correct_number = 0
+    small_disjunct_predict_correct_number = 0
     imbalance_rate = 0
     small_disjunct_imbalance_rate_accuracy = 0
-    big_disjunct_imbalance_rate_accuracy =0
+    big_disjunct_imbalance_rate_accuracy = 0
     whole_imbalance_rate_accuracy = 0
 
-    def __init__(self, prepare_parameter,big_disjunct_class='green',small_disjunct_class='red'):
+    def __init__(self, prepare_parameter, big_disjunct_class='green', small_disjunct_class='red'):
         print("__init__ of Fuzzy_Chi begin...")
         self.logger = Logger.set_logger()
         self.start_time = datetime.datetime.now()
@@ -376,9 +378,9 @@ class FarcHDClassifier():
         self.big_disjunct_class_accuracy = 0
         self.small_disjunct_class_accuracy = 0
         self.big_disjunct_instance_number = 0
-        self.small_disjunct_instance_number= 0
-        self.big_disjunct_predict_correct_number= 0
-        self.small_disjunct_predict_correct_number= 0
+        self.small_disjunct_instance_number = 0
+        self.big_disjunct_predict_correct_number = 0
+        self.small_disjunct_predict_correct_number = 0
 
         output = mydataset.copy_header()  # we insert the header in the output file
         # We write the output for each example
@@ -387,7 +389,7 @@ class FarcHDClassifier():
             original_class = mydataset.get_output_as_string_with_pos(i)
             predict_class = self.classification_output_string(mydataset.get_example(i))
 
-            output = output + original_class + " " + predict_class+ "\n"
+            output = output + original_class + " " + predict_class + "\n"
             if original_class == self.big_disjunct_class:
                 self.big_disjunct_instance_number = self.big_disjunct_instance_number + 1
                 if predict_class == original_class:
@@ -404,17 +406,19 @@ class FarcHDClassifier():
             # print("File not exist")
             output_file = open(filename, "w+")
 
-        self.big_disjunct_class_accuracy = self.big_disjunct_predict_correct_number/self.big_disjunct_instance_number
-        self.small_disjunct_class_accuracy = self.small_disjunct_predict_correct_number/self.small_disjunct_instance_number
-        self.imbalance_rate = self.big_disjunct_instance_number/self.small_disjunct_instance_number
-        percentage_ir = self.big_disjunct_instance_number/(self.big_disjunct_instance_number+self.small_disjunct_instance_number)
+        self.big_disjunct_class_accuracy = self.big_disjunct_predict_correct_number / self.big_disjunct_instance_number
+        self.small_disjunct_class_accuracy = self.small_disjunct_predict_correct_number / self.small_disjunct_instance_number
+        self.imbalance_rate = self.big_disjunct_instance_number / self.small_disjunct_instance_number
+        percentage_ir = self.big_disjunct_instance_number / (
+                    self.big_disjunct_instance_number + self.small_disjunct_instance_number)
 
-        self.small_disjunct_imbalance_rate_accuracy = self.small_disjunct_class_accuracy*percentage_ir
-        self.big_disjunct_imbalance_rate_accuracy = self.big_disjunct_class_accuracy * (1-percentage_ir)
+        self.small_disjunct_imbalance_rate_accuracy = self.small_disjunct_class_accuracy * percentage_ir
+        self.big_disjunct_imbalance_rate_accuracy = self.big_disjunct_class_accuracy * (1 - percentage_ir)
         self.whole_imbalance_rate_accuracy = self.small_disjunct_imbalance_rate_accuracy + self.big_disjunct_imbalance_rate_accuracy
-        output = output + "The big disjunct accuracy is :" + str(self.big_disjunct_class_accuracy)+ "\n"
-        output = output + "The small disjunct accuracy is :" + str(self.small_disjunct_class_accuracy)+ "\n"
-        output = output + "The whole_imbalance_rate_accuracy accuracy is :" + str(self.whole_imbalance_rate_accuracy)+ "\n"
+        output = output + "The big disjunct accuracy is :" + str(self.big_disjunct_class_accuracy) + "\n"
+        output = output + "The small disjunct accuracy is :" + str(self.small_disjunct_class_accuracy) + "\n"
+        output = output + "The whole_imbalance_rate_accuracy accuracy is :" + str(
+            self.whole_imbalance_rate_accuracy) + "\n"
         output_file.write(output)
 
     # * It returns the algorithm classification output given an input example
@@ -686,17 +690,27 @@ class FarcHDClassifier():
             if not (y_true[i] == y_pred_int[i]):
                 sum_degree = 0
                 rule_accurate_array = [0] * rule_num
-                rule_degree = [0]* rule_num
+                rule_degree = [0] * rule_num
                 for rule_index, degree in self.rule_base.data_row_array[i].rule_degree_dic.items():
                     sum_degree = sum_degree + degree
                     rule_degree[rule_index] = degree
 
-                for rule_index , degree in self.rule_base.data_row_array[i].rule_degree_dic.items():
+                for rule_index, degree in self.rule_base.data_row_array[i].rule_degree_dic.items():
                     rule_accurate_array[rule_index] = rule_degree[rule_index] / sum_degree
                     rule_sum_error_arr[rule_index] = rule_sum_error_arr[rule_index] + rule_accurate_array[rule_index]
         for k in range(0, rule_num):
-            print("rule index number :"+str(k) + " ,  and the error rate :" + str(rule_sum_error_arr[k]))
-            error_rate_string = error_rate_string + "rule index number :"+str(k) + " ,  and the error rate :" + str(rule_sum_error_arr[k])
+            print("rule index number :" + str(k) + " ,  and the error rate :" + str(rule_sum_error_arr[k]))
+            error_rate_string = error_rate_string + "rule index number :" + str(k) + " ,  and the error rate :" + str(
+                rule_sum_error_arr[k])
 
         file = open(self.file_rules, "a+")
         file.write(error_rate_string)
+
+    def remove_disjunct(self, train_data_set):
+        feature_number = 2
+        small_disjunct_class = 'red'
+        big_disjunct_class = 'green'
+        convert = Convert()
+        data_row_array_pass = convert.convert_to_data_row_array(train_data_set)
+        removeBigDisjuncts = RemoveBigDisjuncts(self.rule_base.rule_base_array, data_row_array_pass, feature_number,
+                                                small_disjunct_class, big_disjunct_class)

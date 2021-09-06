@@ -39,6 +39,7 @@ import os
 from pathlib import Path
 
 
+
 class Main:
     # * Main Program
     # * @param args It contains the name of the configuration file
@@ -65,7 +66,7 @@ class Main:
         log_file.close()
         # logger.debug("Begin  lf.parse_configuration_file in Main ")
 
-        dataset_folder = 'data20828'
+        dataset_folder = 'data1828'
         config_folder = 'config'
         config_file = "config0s0.txt"
         # whole_file_name_with_path = os.getcwd() + config_file
@@ -106,6 +107,8 @@ class Main:
         if_train = False
         predict_y_test = farchd_classifier.predict(X_test)
         farchd_classifier.score(y_test, predict_y_test, if_granularity, if_train)
+
+
 
 
         """ 
