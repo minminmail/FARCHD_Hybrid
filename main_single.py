@@ -108,7 +108,7 @@ class Main:
         predict_y_test = farchd_classifier.predict(X_test)
         farchd_classifier.score(y_test, predict_y_test, if_granularity, if_train)
 
-        data_row_array_new = farchd_classifier.remove_disjunct()
+        data_row_array_new = farchd_classifier.remove_disjunct(dataset_folder)
         print("the data row number is :"+ str(len(data_row_array_new)))
 
 

@@ -8,6 +8,7 @@ from sklearn.utils.multiclass import unique_labels
 
 from Apriori import Apriori
 from DataBase import DataBase
+from FARCHD_hybrid.Draw.DrawTwoDimension import DrawTwoDimension
 from MyDataSet import MyDataSet
 from GranularityRule import GranularityRule
 import datetime
@@ -706,12 +707,20 @@ class FarcHDClassifier():
         file = open(self.file_rules, "a+")
         file.write(error_rate_string)
 
-    def remove_disjunct(self):
+    def remove_disjunct(self,dataset_folder):
         feature_number = 2
-        small_disjunct_class = 'red'
-        big_disjunct_class = 'green'
+        small_disjunct_class = 1
+        big_disjunct_class = 0
         convert = Convert(self.data_base)
         data_row_array_pass = convert.convert_to_data_row_array(self.train_mydataset)
+        draw = DrawTwoDimension(data_row_array_pass,dataset_folder)
+
+        draw.generate_files(small_disjunct_class)
+        draw.paint()
         removeBigDisjuncts = RemoveBigDisjuncts(self.rule_base.rule_base_array, data_row_array_pass, feature_number,
                                                 small_disjunct_class, big_disjunct_class)
-        return removeBigDisjuncts.remove_big_disjunct()
+        data_row_array_pass = removeBigDisjuncts.remove()
+        after_remove = True
+        draw = DrawTwoDimension(data_row_array_pass,dataset_folder,after_remove)
+        draw.paint()
+        return data_row_array_pass
