@@ -11,8 +11,9 @@ class DrawTwoDimension:
     train_data_row_array = []
     dataset_folder = ""
     after_remove = False
+    graphfile_file_name= ""
 
-    def __init__(self, train_data_row_array_pass, dataset_folder='data3',after_remove=False):
+    def __init__(self, train_data_row_array_pass, dataset_folder='data3', after_remove=False):
         self.train_data_row_array = train_data_row_array_pass
         self.dataset_folder = dataset_folder
         self.after_remove = after_remove
@@ -23,14 +24,25 @@ class DrawTwoDimension:
         cwd = Path.cwd()
         dataset_folder = self.dataset_folder
         if self.after_remove:
+
+            self.graphfile_file_name ='after_remove_graph.png'
             self.small_disjunct_file = cwd / dataset_folder / data_folder / 'data_small_2.dat'
             self.big_disjunct_file = cwd / dataset_folder / data_folder / 'data_big_2.dat'
-            open(self.small_disjunct_file, "x")
+
+            if Path(self.small_disjunct_file).is_file():
+                print("small_disjunct_file File exist")
+            else:
+                open(self.small_disjunct_file, "x")
 
         else:
+            self.graphfile_file_name ='before_remove_graph.png'
             self.small_disjunct_file = cwd / dataset_folder / data_folder / 'data_small.dat'
             self.big_disjunct_file = cwd / dataset_folder / data_folder / 'data_big.dat'
-            open(self.big_disjunct_file, "x")
+
+            if Path(self.big_disjunct_file).is_file():
+                print("big_disjunct_file File exist")
+            else:
+                open(self.big_disjunct_file, "x")
 
         small_disjunct_data_string = ''
         big_disjunct_data_string = ''
@@ -45,15 +57,18 @@ class DrawTwoDimension:
         small_disjunct_file.close()
 
         big_disjunct_file = open(self.big_disjunct_file, "w")
-        big_disjunct_file.write(small_disjunct_data_string)
+        big_disjunct_file.write(big_disjunct_data_string)
         big_disjunct_file.close()
 
     @staticmethod
     def get_data_row_string(data_row):
         data_row_string = ''
-        for each_feature in data_row.feature_values:
-            data_row_string = data_row_string + str(each_feature) + ' '
-        data_row_string = data_row_string + str(data_row.class_value) + '/n '
+        feature_num = len(data_row.feature_values)
+        for i in range(0, feature_num):
+            data_row_string = data_row_string + str(data_row.feature_values[i]) + ','
+
+
+        data_row_string = data_row_string + str(data_row.class_value) + '\n'
         return data_row_string
 
     def paint(self):
@@ -113,6 +128,8 @@ class DrawTwoDimension:
 
         plt.show()
         print("Finished to paint")
+
+        plt.savefig(self.graphfile_file_name)
 
     def paint_with_arrays(self, fig, ax, columnx, columny, paint_shape, paint_color):
         print("begin to paint with arrays parameters")

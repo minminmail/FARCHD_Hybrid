@@ -1,4 +1,5 @@
 from DataRow import DataRow
+import numpy as np
 
 
 class Convert:
@@ -14,9 +15,19 @@ class Convert:
         for i in range(0, train.size()):
 
             class_value = train.get_output_as_integer_with_pos(i)
-            example = train.get_example(i)
             example_feature_array = []
-            example_feature_array.append(train.get_example(i))
+
+            example = train.get_example(i)
+            example_feature_array = np.array(example)
+            """
+              example = example.replace('[', '')
+              example = example.replace(']', '')
+              example_feature_array = example.split(", ")
+            """
+
+
+            print("convert_to_data_row_array,example"+str(example_feature_array))
+
             """
             for f_variable in range(0, self.n_variables):
                 # print("The f_variable is :"+str(f_variable))

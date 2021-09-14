@@ -722,5 +722,6 @@ class FarcHDClassifier():
         data_row_array_pass = removeBigDisjuncts.remove()
         after_remove = True
         draw = DrawTwoDimension(data_row_array_pass,dataset_folder,after_remove)
+        draw.generate_files(small_disjunct_class)
         draw.paint()
         return data_row_array_pass
