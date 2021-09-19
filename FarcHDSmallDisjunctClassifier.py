@@ -8,7 +8,6 @@ from sklearn.utils.multiclass import unique_labels
 
 from Apriori import Apriori
 from DataBase import DataBase
-from FARCHD_hybrid.Draw.DrawTwoDimension import DrawTwoDimension
 from MyDataSet import MyDataSet
 import datetime
 import random
@@ -20,11 +19,10 @@ from RuleBase import RuleBase
 import numpy as np
 from Logger import Logger
 from sklearn.metrics import accuracy_score
-from RemoveBigDisjuncts import RemoveBigDisjuncts
 from Convert import Convert
 
 
-class FarcHDClassifier:
+class FarcHDSmallDisjunctClassifier:
     """ A template estimator to be used as a reference implementation.
 
     For more information regarding how to build your own estimator, read more
@@ -145,6 +143,7 @@ class FarcHDClassifier:
             print("Reading the test set: ")
             self.test_mydataset.read_classification_set(prepare_parameter.get_input_test_files(), False, prepare_parameter.data_main_folder,prepare_parameter.dataset_folder_name)
             print(" ********* test_mydataset.myDataSet read_classification_set finished !!!!!! *********")
+
         except IOError as ioError:
             print("I/O error: " + str(ioError))
             self.something_wrong = True
@@ -156,11 +155,10 @@ class FarcHDClassifier:
         file_output_tr = prepare_parameter.get_training_output_file()
         file_output_tst = prepare_parameter.get_test_output_file()
 
-        output_file_folder = "results"
+        output_file_folder = "smalldijunctsresults"
 
         file_db_name = prepare_parameter.get_output_file(0)
         file_rb_name = prepare_parameter.get_output_file(1)
-
 
         self.file_db = os.path.join(prepare_parameter.result_path, output_file_folder + "\\" + file_db_name)
 
@@ -407,11 +405,10 @@ class FarcHDClassifier:
             output_file = open(filename, "w+")
 
         self.big_disjunct_class_accuracy = self.big_disjunct_predict_correct_number / self.big_disjunct_instance_number
-
         self.small_disjunct_class_accuracy = self.small_disjunct_predict_correct_number / self.small_disjunct_instance_number
         self.imbalance_rate = self.big_disjunct_instance_number / self.small_disjunct_instance_number
         percentage_ir = self.big_disjunct_instance_number / (
-                    self.big_disjunct_instance_number + self.small_disjunct_instance_number)
+                self.big_disjunct_instance_number + self.small_disjunct_instance_number)
 
         self.small_disjunct_imbalance_rate_accuracy = self.small_disjunct_class_accuracy * percentage_ir
         self.big_disjunct_imbalance_rate_accuracy = self.big_disjunct_class_accuracy * (1 - percentage_ir)
@@ -707,22 +704,7 @@ class FarcHDClassifier:
         file = open(self.file_rules, "a+")
         file.write(error_rate_string)
 
-    def remove_disjunct(self,dataset_folder):
-        feature_number = 2
-        small_disjunct_class = 1
-        big_disjunct_class = 0
-        convert = Convert(self.data_base)
-        data_row_array_pass = convert.convert_to_data_row_array(self.train_mydataset)
-        draw = DrawTwoDimension(data_row_array_pass,dataset_folder)
-
-        draw.generate_files(small_disjunct_class)
-        draw.paint()
-        removeBigDisjuncts = RemoveBigDisjuncts(self.rule_base.rule_base_array, data_row_array_pass, feature_number,
-                                                small_disjunct_class, big_disjunct_class)
-        data_row_array_pass = removeBigDisjuncts.remove()
-        after_remove = True
-        draw = DrawTwoDimension(data_row_array_pass,dataset_folder,after_remove)
-        draw.generate_files(small_disjunct_class)
-        draw.paint()
-        return data_row_array_pass
-
+    @staticmethod
+    def data_row_to_train_test_files(data_set_folder, data_row_array_new, file_path, train_file_path, test_file_path):
+        data_file = Convert.convert_to_file(data_row_array_new, file_path)
+        Convert.separate_train_test_files(data_set_folder, data_file, train_file_path, test_file_path)

@@ -1,9 +1,9 @@
 @relation distaa1828a1828
-@attribute 5.3 real [0.19, 16.0]
-@attribute 5.5 real [0.0, 12.0]
-@attribute green {green, red}
-@inputs 5.3, 5.5
-@outputs green
+@attribute f1 real [0.19, 16.0]
+@attribute f2 real [0.0, 12.0]
+@attribute class {green, red}
+@inputs f1, f2
+@outputs class
 @data
 5.8, 4.7, green
 4.2, 5.0, green

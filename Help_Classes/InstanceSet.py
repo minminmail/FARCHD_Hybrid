@@ -173,13 +173,13 @@ class InstanceSet:
     # * @throws HeaderFormatException if there is any lexical or sintactical error in the
     # * header of the input file
 
-    def read_set(self, fileName, isTrain,file_path):
-        print("Before try in readSet of InstanceSet, file_path is :" + str(file_path) + ".")
+    def read_set(self, fileName, isTrain,data_main_folder,dataset_foler_name):
+        print("Before try in readSet of InstanceSet, file_path is :" + str(dataset_foler_name) + ".")
         print("Opening the file in readSet of InstanceSet: " + str(fileName) + ".")
         try:
             # Parsing the header of the DB.
             errorLogger = FormatErrorKeeper()
-            self.file_to_open = Path.cwd() / file_path/fileName
+            self.file_to_open = Path.cwd() / data_main_folder/dataset_foler_name/fileName
 
 
             # Declaring an instance parser

@@ -1,6 +1,6 @@
 algorithm = FARCHD
 inputData = "../datasets/data1828/data1828-10-1tra.dat" "../datasets/data1828/data1828-10-1tra.dat" "../datasets/data1828/data1828-10-1tst.dat" 
-outputData = "../results/Fuzzy-FARCHD-C.data1828/result0s0.tra" "../results/Fuzzy-FARCHD-C.data1828/result0s0.tst" "../results/Fuzzy-FARCHD-C.data1828/result0s0e0.txt"  "../results/Fuzzy-FARCHD-C.data1828/result0s0e1.txt"  
+outputData = "../results/Fuzzy-FARCHD-C.data1828/results/result0s0.tra" "../results/Fuzzy-FARCHD-C.data1828/results/result0s0.tst" "../results/Fuzzy-FARCHD-C.data1828/results/result0s0e0.txt"  "../results/Fuzzy-FARCHD-C.data1828/results/result0s0e1.txt"
 
 seed = 1286082570
 Number of Linguistic Values = 5

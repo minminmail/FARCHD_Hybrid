@@ -232,7 +232,7 @@ class MyDataSet:
     #  * @param train boolean It must have the value "true" if we are reading the training data-set
     #  * @throws IOException If there ocurs any problem with the reading of the data-set
 
-    def read_classification_set(self, dataset_file, train, file_path):
+    def read_classification_set(self, dataset_file, train, data_main_folder,dataset_folder_name):
         try:
             # Load in memory a dataset that contains a classification problem
             print("Inside read_classification_set, datasetFile :" + str(dataset_file))
@@ -244,7 +244,7 @@ class MyDataSet:
             else:
                 no_outputs = None
                 print("self.instance_set is not None, train = " + str(train))
-                self.instance_set.read_set(dataset_file, train, file_path)
+                self.instance_set.read_set(dataset_file, train,data_main_folder, dataset_folder_name)
                 print("begin getNumInstances ...... in read_classification_set ")
                 self.ndata = self.instance_set.getNumInstances()
                 print("In readCread_classification_setlassificationSet , self.ndata is : " + str(self.ndata))

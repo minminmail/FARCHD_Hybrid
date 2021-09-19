@@ -1,15 +1,17 @@
-2021-09-14 00:04:24,441 Rule information log is  : /n 5.3 IS L_1(5) AND : green CF: 0.0319
- /n how many instance number covered by the rule :3   /n how many instance number only antecedent covered by the rule :9  5.5 IS L_1(5) AND : green CF: 0.1915
- /n how many instance number covered by the rule :18   /n how many instance number only antecedent covered by the rule :25  5.5 IS L_4(5) AND : green CF: 0.2553
- /n how many instance number covered by the rule :24   /n how many instance number only antecedent covered by the rule :26  5.3 IS L_3(5) AND : green CF: 0.4787
- /n how many instance number covered by the rule :45   /n how many instance number only antecedent covered by the rule :47  5.3 IS L_4(5) AND : green CF: 0.3723
- /n how many instance number covered by the rule :35   /n how many instance number only antecedent covered by the rule :36  5.5 IS L_2(5) AND : green CF: 0.2872
- /n how many instance number covered by the rule :27   /n how many instance number only antecedent covered by the rule :27  5.5 IS L_0(5) AND : green CF: 0.0319
+2021-09-20 00:10:32,827 Rule information log is  : /n f1 IS L_1(5) AND : green CF: 0.0319
+ /n how many instance number covered by the rule :3   /n how many instance number only antecedent covered by the rule :9  f2 IS L_1(5) AND : green CF: 0.1915
+ /n how many instance number covered by the rule :18   /n how many instance number only antecedent covered by the rule :25  f2 IS L_4(5) AND : green CF: 0.2553
+ /n how many instance number covered by the rule :24   /n how many instance number only antecedent covered by the rule :26  f1 IS L_3(5) AND : green CF: 0.4787
+ /n how many instance number covered by the rule :45   /n how many instance number only antecedent covered by the rule :47  f1 IS L_4(5) AND : green CF: 0.3723
+ /n how many instance number covered by the rule :35   /n how many instance number only antecedent covered by the rule :36  f2 IS L_2(5) AND : green CF: 0.2872
+ /n how many instance number covered by the rule :27   /n how many instance number only antecedent covered by the rule :27  f2 IS L_0(5) AND : green CF: 0.0319
  /n how many instance number covered by the rule :3   /n how many instance number only antecedent covered by the rule :3  
-2021-09-14 00:04:25,058 update_title_pos
-2021-09-14 00:04:25,112 findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\software\\anaconda3\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
-2021-09-14 00:05:15,657 update_title_pos
-2021-09-14 00:05:15,773 update_title_pos
-2021-09-14 00:05:18,828 update_title_pos
-2021-09-14 00:05:55,098 update_title_pos
-2021-09-14 00:05:55,212 update_title_pos
+2021-09-20 00:10:43,783 update_title_pos
+2021-09-20 00:10:43,825 findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\software\\anaconda3\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2021-09-20 00:10:43,962 update_title_pos
+2021-09-20 00:10:44,105 update_title_pos
+2021-09-20 00:10:44,233 update_title_pos
+2021-09-20 00:10:44,298 update_title_pos
+2021-09-20 00:10:44,331 update_title_pos
+2021-09-20 00:10:44,371 update_title_pos
+2021-09-20 00:10:44,397 update_title_pos

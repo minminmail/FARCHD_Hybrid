@@ -26,7 +26,7 @@ class LoadFiles:
     output_files = []
     file_path = None
     result_path = None
-    data_folder = None
+    data_main_folder = None
 
     train_mydataset = None
     val_mydataset = None
@@ -40,14 +40,19 @@ class LoadFiles:
         self.input_files = []
         self.output_files = []
         self.parameters = []
-        self.file_path = None
+        self.dataset_folder_name = None
         self.result_path = None
-        self.data_folder = None
+        self.data_main_folder = None
         self.something_wrong = False
 
-    def parse_configuration_file(self, file_name,dataset_folder):
+    def parse_configuration_file(self, file_name,data_main_folder,dataset_folder_name):
 
         self.file_to_open = file_name
+
+        # will use in the classifier
+        self.data_main_folder = data_main_folder
+        self.dataset_folder_name = dataset_folder_name
+        self.result_path = data_main_folder
 
         with file_name.open() as config_file:
             line = config_file.readlines()
@@ -58,9 +63,7 @@ class LoadFiles:
         #logging.info("fileName in parseParameters = " + file_name)
         #logging.info("before open file")
 
-        db_path = "dataset"
-        self.file_path = Path(dataset_folder)/db_path
-        self.result_path = dataset_folder
+
 
 
         # file is an string containing the whole file
@@ -79,42 +82,7 @@ class LoadFiles:
                 self.read_all_parameters(line[line_number])  # We read all the possible parameters
         # print("__init__ of Read Files begin...")
 
-        """
-        self.train_mydataset = MyDataSet()
-        self.val_mydataset = MyDataSet()
-        self.test_mydataset = MyDataSet()
 
-        try:
-
-            input_training_file = self.get_input_training_files()
-            print("Reading the training set: " + input_training_file)
-
-        
-
-            self.train_mydataset.read_classification_set(input_training_file, True, self.file_path)
-            
-            print("Reading the validation set: ")
-            input_validation_file = self.get_validation_input_file()
-        
-            self.val_mydataset.read_classification_set(input_validation_file, True, self.file_path)
-
-            print("Reading the test set: ")
-            input_test_file = self.get_input_test_files()
-      
-            self.test_mydataset.read_classification_set(input_test_file, False, self.file_path)
-            print(" ********* test_mydataset.myDataSet read_classification_set finished !!!!!! *********")
-        except IOError as ioError:
-            print("I/O error: " + str(ioError))
-            self.something_wrong = True
-        except Exception as e:
-            print("Unexpected error:" + str(e))
-            self.something_wrong = True
-
-        self.something_wrong = self.something_wrong or self.train_mydataset.has_missing_attributes()
-        # print("********* Summary for readAllParameters :" + " *********")
-        # for key, value in self.__parameters:
-        # print("********* parameters are : (" + key + ", " + value + " ) *********")
-      """
 
     # """
     #     * It reads the name of the algorithm from the configuration file

@@ -756,39 +756,491 @@ data_row_array  : 224
 
 data_row_array  : 225
 
+data_row_array  : 226
+
+data_row_array  : 227
+
+data_row_array  : 228
+
+data_row_array  : 229
+
+data_row_array  : 230
+
+data_row_array  : 231
+
+data_row_array  : 232
+
+data_row_array  : 233
+
+data_row_array  : 234
+
+data_row_array  : 235
+
+data_row_array  : 236
+
+data_row_array  : 237
+
+data_row_array  : 238
+
+data_row_array  : 239
+
+data_row_array  : 240
+
+data_row_array  : 241
+
+data_row_array  : 242
+
+data_row_array  : 243
+
+data_row_array  : 244
+
+data_row_array  : 245
+
+data_row_array  : 246
+
+data_row_array  : 247
+
+data_row_array  : 248
+
+data_row_array  : 249
+
+data_row_array  : 250
+
+data_row_array  : 251
+
+data_row_array  : 252
+
+data_row_array  : 253
+
+data_row_array  : 254
+
+data_row_array  : 255
+
+data_row_array  : 256
+
+data_row_array  : 257
+
+data_row_array  : 258
+
+data_row_array  : 259
+
+data_row_array  : 260
+
+data_row_array  : 261
+
+data_row_array  : 262
+
+data_row_array  : 263
+
+data_row_array  : 264
+
+data_row_array  : 265
+
+data_row_array  : 266
+
+data_row_array  : 267
+
+data_row_array  : 268
+
+data_row_array  : 269
+
+data_row_array  : 270
+
+data_row_array  : 271
+
+data_row_array  : 272
+
+data_row_array  : 273
+
+data_row_array  : 274
+
+data_row_array  : 275
+
+data_row_array  : 276
+
+data_row_array  : 277
+
+data_row_array  : 278
+
+data_row_array  : 279
+
+data_row_array  : 280
+
+data_row_array  : 281
+
+data_row_array  : 282
+
+data_row_array  : 283
+
+data_row_array  : 284
+
+data_row_array  : 285
+
+data_row_array  : 286
+
+data_row_array  : 287
+
+data_row_array  : 288
+
+data_row_array  : 289
+
+data_row_array  : 290
+
+data_row_array  : 291
+
+data_row_array  : 292
+
+data_row_array  : 293
+
+data_row_array  : 294
+
+data_row_array  : 295
+
+data_row_array  : 296
+
+data_row_array  : 297
+
+data_row_array  : 298
+
+data_row_array  : 299
+
+data_row_array  : 300
+
+data_row_array  : 301
+
+data_row_array  : 302
+
+data_row_array  : 303
+
+data_row_array  : 304
+
+data_row_array  : 305
+
+data_row_array  : 306
+
+data_row_array  : 307
+
+data_row_array  : 308
+
+data_row_array  : 309
+
+data_row_array  : 310
+
+data_row_array  : 311
+
+data_row_array  : 312
+
+data_row_array  : 313
+
+data_row_array  : 314
+
+data_row_array  : 315
+
+data_row_array  : 316
+
+data_row_array  : 317
+
+data_row_array  : 318
+
+data_row_array  : 319
+
+data_row_array  : 320
+
+data_row_array  : 321
+
+data_row_array  : 322
+
+data_row_array  : 323
+
+data_row_array  : 324
+
+data_row_array  : 325
+
+data_row_array  : 326
+
+data_row_array  : 327
+
+data_row_array  : 328
+
+data_row_array  : 329
+
+data_row_array  : 330
+
+data_row_array  : 331
+
+data_row_array  : 332
+
+data_row_array  : 333
+
+data_row_array  : 334
+
+data_row_array  : 335
+
+data_row_array  : 336
+
+data_row_array  : 337
+
+data_row_array  : 338
+
+data_row_array  : 339
+
+data_row_array  : 340
+
+data_row_array  : 341
+
+data_row_array  : 342
+
+data_row_array  : 343
+
+data_row_array  : 344
+
+data_row_array  : 345
+
+data_row_array  : 346
+
+data_row_array  : 347
+
+data_row_array  : 348
+
+data_row_array  : 349
+
+data_row_array  : 350
+
+data_row_array  : 351
+
+data_row_array  : 352
+
+data_row_array  : 353
+
+data_row_array  : 354
+
+data_row_array  : 355
+
+data_row_array  : 356
+
+data_row_array  : 357
+
+data_row_array  : 358
+
+data_row_array  : 359
+
+data_row_array  : 360
+
+data_row_array  : 361
+
+data_row_array  : 362
+
+data_row_array  : 363
+
+data_row_array  : 364
+
+data_row_array  : 365
+
+data_row_array  : 366
+
+data_row_array  : 367
+
+data_row_array  : 368
+
+data_row_array  : 369
+
+data_row_array  : 370
+
+data_row_array  : 371
+
+data_row_array  : 372
+
+data_row_array  : 373
+
+data_row_array  : 374
+
+data_row_array  : 375
+
+data_row_array  : 376
+
+data_row_array  : 377
+
+data_row_array  : 378
+
+data_row_array  : 379
+
+data_row_array  : 380
+
+data_row_array  : 381
+
+data_row_array  : 382
+
+data_row_array  : 383
+
+data_row_array  : 384
+
+data_row_array  : 385
+
+data_row_array  : 386
+
+data_row_array  : 387
+
+data_row_array  : 388
+
+data_row_array  : 389
+
+data_row_array  : 390
+
+data_row_array  : 391
+
+data_row_array  : 392
+
+data_row_array  : 393
+
+data_row_array  : 394
+
+data_row_array  : 395
+
+data_row_array  : 396
+
+data_row_array  : 397
+
+data_row_array  : 398
+
+data_row_array  : 399
+
+data_row_array  : 400
+
+data_row_array  : 401
+
+data_row_array  : 402
+
+data_row_array  : 403
+
+data_row_array  : 404
+
+data_row_array  : 405
+
+data_row_array  : 406
+
+data_row_array  : 407
+
+data_row_array  : 408
+
+data_row_array  : 409
+
+data_row_array  : 410
+
+data_row_array  : 411
+
+data_row_array  : 412
+
+data_row_array  : 413
+
+data_row_array  : 414
+
+data_row_array  : 415
+
+data_row_array  : 416
+
+data_row_array  : 417
+
+data_row_array  : 418
+
+data_row_array  : 419
+
+data_row_array  : 420
+
+data_row_array  : 421
+
+data_row_array  : 422
+
+data_row_array  : 423
+
+data_row_array  : 424
+
+data_row_array  : 425
+
+data_row_array  : 426
+
+data_row_array  : 427
+
+data_row_array  : 428
+
+data_row_array  : 429
+
+data_row_array  : 430
+
+data_row_array  : 431
+
+data_row_array  : 432
+
+data_row_array  : 433
+
+data_row_array  : 434
+
+data_row_array  : 435
+
+data_row_array  : 436
+
+data_row_array  : 437
+
+data_row_array  : 438
+
+data_row_array  : 439
+
+data_row_array  : 440
+
+data_row_array  : 441
+
+data_row_array  : 442
+
+data_row_array  : 443
+
+data_row_array  : 444
+
+data_row_array  : 445
+
+data_row_array  : 446
+
+data_row_array  : 447
+
+data_row_array  : 448
+
+data_row_array  : 449
+
+data_row_array  : 450
+
+data_row_array  : 451
+
 1: f1 IS L_1(5): green rule's index : 0
- rule's support x: 9
- rule's support xy: 3
+ rule's support x: 27
+ rule's support xy: 9
  rule's rule_cover_accurate: 0.3333
  rule's negative_rule: False
 rule's supp: 0.0796 AND rule's CF: 0.03192: f2 IS L_1(5): green rule's index : 1
- rule's support x: 25
- rule's support xy: 18
+ rule's support x: 75
+ rule's support xy: 54
  rule's rule_cover_accurate: 0.72
  rule's negative_rule: False
 rule's supp: 0.2212 AND rule's CF: 0.19153: f2 IS L_4(5): green rule's index : 2
- rule's support x: 26
- rule's support xy: 24
+ rule's support x: 78
+ rule's support xy: 72
  rule's rule_cover_accurate: 0.9231
  rule's negative_rule: False
 rule's supp: 0.2301 AND rule's CF: 0.25534: f1 IS L_3(5): green rule's index : 3
- rule's support x: 47
- rule's support xy: 45
+ rule's support x: 141
+ rule's support xy: 135
  rule's rule_cover_accurate: 0.9574
  rule's negative_rule: False
 rule's supp: 0.4159 AND rule's CF: 0.47875: f1 IS L_4(5): green rule's index : 4
- rule's support x: 36
- rule's support xy: 35
+ rule's support x: 108
+ rule's support xy: 105
  rule's rule_cover_accurate: 0.9722
  rule's negative_rule: False
 rule's supp: 0.3186 AND rule's CF: 0.37236: f2 IS L_2(5): green rule's index : 5
- rule's support x: 27
- rule's support xy: 27
+ rule's support x: 81
+ rule's support xy: 81
  rule's rule_cover_accurate: 1.0
  rule's negative_rule: False
 rule's supp: 0.2389 AND rule's CF: 0.28727: f2 IS L_0(5): green rule's index : 6
- rule's support x: 3
- rule's support xy: 3
+ rule's support x: 9
+ rule's support xy: 9
  rule's rule_cover_accurate: 1.0
  rule's negative_rule: False
 rule's supp: 0.0265 AND rule's CF: 0.0319

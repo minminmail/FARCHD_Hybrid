@@ -33,11 +33,11 @@ import numpy as np
 # * @version 1.0
 # * @since JDK1.5
 from LoadFiles import LoadFiles
+from FarcHDSmallDisjunctClassifier import FarcHDSmallDisjunctClassifier
 from FarcHDClassifier import FarcHDClassifier
 from Logger import Logger
 import os
 from pathlib import Path
-
 
 
 class Main:
@@ -66,8 +66,10 @@ class Main:
         log_file.close()
         # logger.debug("Begin  lf.parse_configuration_file in Main ")
 
-        dataset_folder = 'data1828'
+        data_main_folder = 'data1828'
         config_folder = 'config'
+        dataset_folder_name = 'dataset'
+        data_set_folder = 'smalldisjunctdataset'
         config_file = "config0s0.txt"
         # whole_file_name_with_path = os.getcwd() + config_file
 
@@ -75,9 +77,8 @@ class Main:
 
         whole_file_name_with_path = os.path.join(os.getcwd(), config_file)
         cwd = Path.cwd()
-        whole_file_name_with_path = cwd / dataset_folder / config_folder / config_file
-        lf.parse_configuration_file(whole_file_name_with_path, dataset_folder)
-
+        whole_file_name_with_path = cwd / data_main_folder / config_folder / config_file
+        lf.parse_configuration_file(whole_file_name_with_path,data_main_folder, dataset_folder_name)
 
         # logger.debug("Begin  FarcHDClassifier in Main ")
         farchd_classifier = FarcHDClassifier(lf)
@@ -92,7 +93,6 @@ class Main:
         # logger.debug("Begin  farchd_classifier.fit in Main ")
         y.reshape(1, -1)
         farchd_classifier.fit(X, y)
-        test_x = [4.6, 3.1, 1.5, 0.2]
 
         if_granularity = False
 
@@ -102,15 +102,70 @@ class Main:
 
         # logger.debug("Begin  farchd_classifier.score Main ")
 
-        farchd_classifier.score(y,predict_y_train, if_granularity, if_train)
+        farchd_classifier.score(y, predict_y_train, if_granularity, if_train)
 
         if_train = False
         predict_y_test = farchd_classifier.predict(X_test)
         farchd_classifier.score(y_test, predict_y_test, if_granularity, if_train)
 
-        data_row_array_new = farchd_classifier.remove_disjunct(dataset_folder)
-        print("the data row number is :"+ str(len(data_row_array_new)))
+        # Generate the small disjuncts dataset files
+        data_row_array_new = farchd_classifier.remove_disjunct(data_main_folder)
+        print("the data row number is :" + str(len(data_row_array_new)))
+        file_path = cwd / data_main_folder / data_set_folder / 'data_file.dat'
+        train_file_path = cwd / data_main_folder / data_set_folder / 'train_file.dat'
+        test_file_path = cwd / data_main_folder / data_set_folder / 'test_file.dat'
+        FarcHDSmallDisjunctClassifier.data_row_to_train_test_files(data_set_folder, data_row_array_new, file_path,
+                                                                   train_file_path,
+                                                                   test_file_path)
 
+        # Do the classify for the small disjunct dataset
+
+        lf_small_disjunct = LoadFiles()
+
+        log_file = open("help.log", "w")
+        log_file.truncate()
+        log_file.close()
+        # logger.debug("Begin  lf.parse_configuration_file in Main ")
+
+        data_main_folder = 'data1828'
+        dataset_folder_name ='smalldisjunctdataset'
+        config_folder = 'smalldisjunctconfig'
+        data_set_folder = 'smalldisjunctdataset'
+        config_file = "config0s0.txt"
+        # whole_file_name_with_path = os.getcwd() + config_file
+
+        # lf.parse_configuration_file("\iris", "config1s0.txt")
+
+
+        cwd = Path.cwd()
+        whole_file_name_with_path = cwd / data_main_folder / config_folder / config_file
+        lf_small_disjunct.parse_configuration_file(whole_file_name_with_path,data_main_folder, dataset_folder_name)
+
+        small_disjunct_farchd_classifier = FarcHDSmallDisjunctClassifier(lf_small_disjunct)
+
+        X_small_disjunct = small_disjunct_farchd_classifier.get_X()
+        y_small_disjunct = small_disjunct_farchd_classifier.get_y()
+
+        X_test = small_disjunct_farchd_classifier.get_test_x()
+        y_test = small_disjunct_farchd_classifier.get_test_y()
+
+        # logger.debug("Begin  farchd_classifier.fit in Main ")
+        y_small_disjunct.reshape(1, -1)
+        small_disjunct_farchd_classifier.fit(X_small_disjunct, y_small_disjunct)
+
+        if_granularity = False
+
+        # normal rule prediction
+        if_train = True
+        predict_y_train_small_disjunct = small_disjunct_farchd_classifier.predict(X_small_disjunct)
+
+        # logger.debug("Begin  farchd_classifier.score Main ")
+
+        small_disjunct_farchd_classifier.score(y, predict_y_train_small_disjunct, if_granularity, if_train)
+
+        if_train = False
+        predict_y_test_small_disjunct = small_disjunct_farchd_classifier.predict(X_test)
+        small_disjunct_farchd_classifier.score(y_test, predict_y_test_small_disjunct, if_granularity, if_train)
 
         """ 
 
@@ -126,4 +181,3 @@ class Main:
         predict_test_granularity_y = farchd_classifier.predict_granularity(X_test)
         farchd_classifier.score(y_test, predict_test_granularity_y,if_granularity, if_train)
         """
-
