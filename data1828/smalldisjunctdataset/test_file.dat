@@ -1,3 +1,10 @@
+@relationsmalldisjunctdataset
+feature1 real [1.0,10.62789976770678]
+feature2 real [0.6,10.50427173043098]
+class {red, green}
+@inputs  feature1, feature2
+@outputs  class
+@data
 10.62789976770678,10.50427173043098,red
 7.4985618844128625,7.191881405166585,red
 1.0,0.6,red

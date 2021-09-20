@@ -134,15 +134,17 @@ class Convert:
     @staticmethod
     def get_feature_min(file_path, column_number):
         feature_min = -1
-        df = pd.read_csv(file_path)
-        feature_min = df.iloc[column_number].min()
+        df = pd.read_csv(file_path,header=None)
+        column_array = df[column_number]
+        feature_min = column_array.min()
 
         return feature_min
 
     @staticmethod
     def get_feature_max(file_path, column_number):
         feature_max = -1
-        df = pd.read_csv(file_path)
-        feature_max = df.iloc[column_number].max()
+        df = pd.read_csv(file_path,header=None)
+        column_array = df[column_number]
+        feature_max = column_array.max()
 
         return feature_max
