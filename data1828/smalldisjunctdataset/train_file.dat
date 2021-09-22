@@ -1,8 +1,8 @@
-@relationsmalldisjunctdataset
-feature1 real [0.19,14.129752047960727]
-feature2 real [0.28,9.98309658326446]
-class {red, green}
-@inputs  feature1, feature2
+@relation smalldisjunctdataset
+@attribute f1 real [0.19,14.129752047960727]
+@attribute f2 real [0.28,9.98309658326446]
+@attribute class {green, red}
+@inputs  f1, f2
 @outputs  class
 @data
 7.196047855262202,6.835194209501902,red

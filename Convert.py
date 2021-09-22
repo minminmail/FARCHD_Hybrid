@@ -119,13 +119,12 @@ class Convert:
         feature_2_min = Convert.get_feature_min(file_path, feature_2)
         feature_2_max = Convert.get_feature_max(file_path, feature_2)
 
-        data_file_header = "@relation" + dataset_name + '\n'
-        data_file_header = data_file_header + "feature1 " + "real [" + str(feature_1_min) + "," + str(
-            feature_1_max) + "]" + '\n'
-        data_file_header = data_file_header + "feature2 " + "real [" + str(feature_2_min) + "," + str(
+        data_file_header = "@relation " + dataset_name + '\n'
+        data_file_header = data_file_header + "@attribute f1 " + "real [" + str(feature_1_min) + "," + str(feature_1_max) + "]" + '\n'
+        data_file_header = data_file_header + "@attribute f2 " + "real [" + str(feature_2_min) + "," + str(
             feature_2_max) + "]" + '\n'
-        data_file_header = data_file_header + "class " + "{red, green}" + '\n'
-        data_file_header = data_file_header + "@inputs  " + "feature1, feature2" + '\n'
+        data_file_header = data_file_header + "@attribute class " + "{green, red}" + '\n'
+        data_file_header = data_file_header + "@inputs  " + "f1, f2" + '\n'
         data_file_header = data_file_header + "@outputs  " + "class" + '\n'
         data_file_header = data_file_header + "@data"
 

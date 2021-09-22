@@ -403,10 +403,20 @@ class FarcHDSmallDisjunctClassifier:
         else:
             # print("File not exist")
             output_file = open(filename, "w+")
+        if self.big_disjunct_instance_number==0:
+            self.big_disjunct_class_accuracy = -1
+        else:
+            self.big_disjunct_class_accuracy = self.big_disjunct_predict_correct_number / self.big_disjunct_instance_number
+        if self.small_disjunct_instance_number ==0:
+            self.small_disjunct_class_accuracy=-1
+        else:
+            self.small_disjunct_class_accuracy = self.small_disjunct_predict_correct_number / self.small_disjunct_instance_number
 
-        self.big_disjunct_class_accuracy = self.big_disjunct_predict_correct_number / self.big_disjunct_instance_number
-        self.small_disjunct_class_accuracy = self.small_disjunct_predict_correct_number / self.small_disjunct_instance_number
-        self.imbalance_rate = self.big_disjunct_instance_number / self.small_disjunct_instance_number
+        if self.small_disjunct_instance_number ==0:
+            self.imbalance_rate = -1
+        else:
+            self.imbalance_rate = self.big_disjunct_instance_number / self.small_disjunct_instance_number
+
         percentage_ir = self.big_disjunct_instance_number / (
                 self.big_disjunct_instance_number + self.small_disjunct_instance_number)
 
