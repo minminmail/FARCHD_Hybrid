@@ -2,20 +2,19 @@ After predict the rules information is as below: @Number of rules: 3
 
 data_row_array  : 0
 
-rule index is : 0 , degree is : 0.11556303878807979
-rule index is : 1 , degree is : 0.33529152920526134
+rule index is : 0 , degree is : 0.20695893489936662
+rule index is : 1 , degree is : 0.15587767256553012
 data_row_array  : 1
 
-rule index is : 0 , degree is : 0.11846160733417863
-rule index is : 1 , degree is : 0.3207816111509249
+rule index is : 0 , degree is : 0.16491665709488318
+rule index is : 1 , degree is : 0.36850875593552995
 data_row_array  : 2
 
-rule index is : 0 , degree is : 0.10093596431209957
-rule index is : 1 , degree is : 0.2051803675011422
+rule index is : 2 , degree is : 0.11997552182163188
 data_row_array  : 3
 
-rule index is : 0 , degree is : 0.13836666666666667
-rule index is : 1 , degree is : 0.0063137254901960895
+rule index is : 0 , degree is : 0.17751237456867056
+rule index is : 1 , degree is : 0.2807299375361097
 data_row_array  : 4
 
 rule index is : 2 , degree is : 0.1509

@@ -161,7 +161,7 @@ class Main:
 
         # logger.debug("Begin  farchd_classifier.score Main ")
 
-        small_disjunct_farchd_classifier.score(y, predict_y_train_small_disjunct, if_granularity, if_train)
+        small_disjunct_farchd_classifier.score(y_small_disjunct, predict_y_train_small_disjunct, if_granularity, if_train)
 
         if_train = False
         predict_y_test_small_disjunct = small_disjunct_farchd_classifier.predict(X_test)
